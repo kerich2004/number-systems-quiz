@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="app.js"></script>
+
+    <title>Number System Quiz</title>
+</head>
+
+<body>
+    <header>
+        <h2>Number System Quiz</h2>
+    </header>
+
+    <main>
+        <section id="menu" hidden>
+            <h2>Quiz Options</h2>
+
+            <form action="javascript:" id="options">
+                <span>Number Systems</span>
+                <label>
+                    <input type="radio" name="system" value="2">
+                    <span>Binary</span>
+                </label>
+                <label>
+                    <input type="radio" name="system" value="8">
+                    <span>Octal</span>
+                </label>
+                <label>
+                    <input type="radio" name="system" value="16" checked>
+                    <span>Hexadecimal</span>
+                </label>
+                <label>
+                    <input type="radio" name="system" value="mix">
+                    <span>Mix</span>
+                </label>
+
+                <br>
+
+                <label>
+                    <input type="radio" name="direction" value="to">
+                    <span>To decimal</span>
+                </label>
+                <label>
+                    <input type="radio" name="direction" value="from" checked>
+                    <span>From decimal</span>
+                </label>
+                <br>
+
+                <label>
+                    <span>Maximum digits</span>
+                    <input type="number" name="digits" min="1" max="8" value="2">
+                </label>
+
+                <hr>
+
+                <label>
+                    <span>Question count</span>
+                    <select name="count">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="40">40</option>
+                        <option value="100">100</option> 
+                    </select>
+                </label>
+
+                <label>
+                    <input type="checkbox" name="timed">
+                    <span>Time Limit</span>
+
+                    <input type="number" name="limit" min="30" value="180">
+                    <span>seconds</span>
+                </label>
+                
+            </form>
+
+            <button id="play" data-id="game">Play</button>
+        </section>
+
+        <section id="game" hidden>
+            <h2>Guess a Number</h2>
+
+            <button id="check" data-id="results">Check answer</button>
+        </section>
+
+        <section id="results" hidden>
+            <h2>Results</h2>
+
+            <button id="new" data-id="menu">New Quiz</button>
+        </section>
+    </main>
+    
+    <footer>
+        <a href="https://github.com/kerich2004/number-systems-quiz">Github Repo</a>
+    </footer>
+</body>
+
+</html>
