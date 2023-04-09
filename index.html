@@ -24,73 +24,85 @@
 
     <main>
         <section id="menu" hidden>
-            <h2>Quiz Options</h2>
+            <div class="menu">
+                <h2>Quiz Options</h2>
 
-            <form action="javascript:" id="options">
-                <span class="choice-point">Number Systems</span>
-                <label>
-                    <input type="radio" name="system" value="2">
-                    <span>Binary</span>
-                </label>
-                <label>
-                    <input type="radio" name="system" value="8">
-                    <span>Octal</span>
-                </label>
-                <label>
-                    <input type="radio" name="system" value="16" checked>
-                    <span>Hexadecimal</span>
-                </label>
-                <label>
-                    <input type="radio" name="system" value="mix">
-                    <span>Mix</span>
-                </label>
+                <form action="javascript:" id="options">
+                    <span class="choice-point">Number Systems</span>
+                    <div class="number-systems-block">
+                        <div class="system-block">
+                            <label>
+                                <input type="radio" name="system" value="2">
+                                <span>Binary</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="system" value="8">
+                                <span>Octal</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="system" value="16" checked>
+                                <span>Hexadecimal</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="system" value="mix">
+                                <span>Mix</span>
+                            </label>
+                        </div>
+                        <div class="direction-block">
+                            <label>
+                                <input type="radio" name="direction" value="to">
+                                <span>To decimal</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="direction" value="from" checked>
+                                <span>From decimal</span>
+                            </label>
+                        </div>
 
-                <br>
+                    </div>
+                    
+    
+                    <br>
+    
+                    <br>
+    
+                    <label>
+                        <span class="choice-point">Maximum digits</span>
+                        <input type="number" name="digits" min="1" max="8" value="2">
+                    </label>
+    
+                    <hr>
+    
+                    <label>
+                        <span class="choice-point">Question count</span>
+                        <select name="count">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="40">40</option>
+                            <option value="100">100</option> 
+                        </select>
+                    </label>
+    
+                    <hr>
+    
+                    <label>
+                        <input type="checkbox" name="timed">
+                        <span>Time Limit</span>
+    
+                        <input type="number" name="limit" min="30" value="180">
+                        <span>seconds</span>
+                    </label>
+                    
+                </form>
+    
+                <button id="play" data-id="game">Play</button>
+            </section>
+            </div>
+            
 
-                <label>
-                    <input type="radio" name="direction" value="to">
-                    <span>To decimal</span>
-                </label>
-                <label>
-                    <input type="radio" name="direction" value="from" checked>
-                    <span>From decimal</span>
-                </label>
-                <br>
-
-                <label>
-                    <span class="choice-point">Maximum digits</span>
-                    <input type="number" name="digits" min="1" max="8" value="2">
-                </label>
-
-                <hr>
-
-                <label>
-                    <span class="choice-point">Question count</span>
-                    <select name="count">
-                        <option value="5">5</option>
-                        <option value="10" selected>10</option>
-                        <option value="20">20</option>
-                        <option value="40">40</option>
-                        <option value="100">100</option> 
-                    </select>
-                </label>
-
-                <hr>
-                
-                <label>
-                    <input type="checkbox" name="timed">
-                    <span>Time Limit</span>
-
-                    <input type="number" name="limit" min="30" value="180">
-                    <span>seconds</span>
-                </label>
-                
-            </form>
-
-            <button id="play" data-id="game">Play</button>
-        </section>
-
-        <section id="game" hidden>
+        <section id="game" hidden> 
+            <p>Случайное число будет:<span class="outNumber"></span></p>
             <h2>Guess a Number</h2>
 
             <button id="check" data-id="results">Check answer</button>
