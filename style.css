@@ -1,16 +1,86 @@
-html,input,select,button {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+html,input,select,button,h2 {
+    font-family: 'Oswald', sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 100vh;
     margin: 0;
+    background-image: url(background-first-screen.jpg);
 }
 
 [name=timed]:not(:checked) ~ :is([name=limit], :last-child) {
     display: none;
+}
+
+input[type="radio"]:checked + span {
+    color: #3A1078;
+}
+
+header > h2 {
+    font-size: 2em;
+    color: #3A1078;
+}
+
+main h2 {
+    padding: 10px 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin: 0 0 10px 0;
+    background: #9d8dba;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.choice-point {
+    color: #2F58CD;
+    margin-bottom: 10px;
+}
+
+#menu {
+    display: flex;
+    background: #e6cbeb;
+    width: 500px;
+    border-radius: 10px;
+    border: 2px solid white;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    width: 200px;
+    padding: 5px;
+    background: #908dba;
+    color: white;
+    font-size: 1.2em;
+    margin: 10px 0;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #cba6c5;
+    opacity: 2s;
+}
+
+label:last-child {
+    height: 26px;
+}
+
+a {
+    color: blue;
+}
+
+a:hover {
+    color: darkblue;
 }

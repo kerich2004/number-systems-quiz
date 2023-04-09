@@ -8,6 +8,10 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
     <script type="module" src="app.js"></script>
 
     <title>Number System Quiz</title>
@@ -23,7 +27,7 @@
             <h2>Quiz Options</h2>
 
             <form action="javascript:" id="options">
-                <span>Number Systems</span>
+                <span class="choice-point">Number Systems</span>
                 <label>
                     <input type="radio" name="system" value="2">
                     <span>Binary</span>
@@ -54,14 +58,14 @@
                 <br>
 
                 <label>
-                    <span>Maximum digits</span>
+                    <span class="choice-point">Maximum digits</span>
                     <input type="number" name="digits" min="1" max="8" value="2">
                 </label>
 
                 <hr>
 
                 <label>
-                    <span>Question count</span>
+                    <span class="choice-point">Question count</span>
                     <select name="count">
                         <option value="5">5</option>
                         <option value="10" selected>10</option>
@@ -71,6 +75,8 @@
                     </select>
                 </label>
 
+                <hr>
+                
                 <label>
                     <input type="checkbox" name="timed">
                     <span>Time Limit</span>
