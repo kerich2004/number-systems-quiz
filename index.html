@@ -2,122 +2,122 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-    
-    <script type="module" src="app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 
-    <title>Number System Quiz</title>
+  <script type="module" src="app.js"></script>
+
+  <title>Number System Quiz</title>
 </head>
 
 <body>
-    <header>
-        <h2>Number System Quiz</h2>
-    </header>
+  <header>
+    <h2>Number System Quiz</h2>
+  </header>
 
-    <main>
-        <section id="menu" hidden>
-            <div class="menu">
-                <h2>Quiz Options</h2>
+  <main>
+    <section id="menu" hidden>
+      <h2>Quiz Options</h2>
 
-                <form action="javascript:" id="options">
-                    <span class="choice-point">Number Systems</span>
-                    <div class="number-systems-block">
-                        <div class="system-block">
-                            <label>
-                                <input type="radio" name="system" value="2">
-                                <span>Binary</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="system" value="8">
-                                <span>Octal</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="system" value="16" checked>
-                                <span>Hexadecimal</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="system" value="mix">
-                                <span>Mix</span>
-                            </label>
-                        </div>
-                        <div class="direction-block">
-                            <label>
-                                <input type="radio" name="direction" value="to">
-                                <span>To decimal</span>
-                            </label>
-                            <label>
-                                <input type="radio" name="direction" value="from" checked>
-                                <span>From decimal</span>
-                            </label>
-                        </div>
+      <form action="javascript:" id="options">
+        <span class="choice-point">Number Systems</span>
 
-                    </div>
-                    
-    
-                    <br>
-    
-                    <br>
-    
-                    <label>
-                        <span class="choice-point">Maximum digits</span>
-                        <input type="number" name="digits" min="1" max="8" value="2">
-                    </label>
-    
-                    <hr>
-    
-                    <label>
-                        <span class="choice-point">Question count</span>
-                        <select name="count">
-                            <option value="5">5</option>
-                            <option value="10" selected>10</option>
-                            <option value="20">20</option>
-                            <option value="40">40</option>
-                            <option value="100">100</option> 
-                        </select>
-                    </label>
-    
-                    <hr>
-    
-                    <label>
-                        <input type="checkbox" name="timed">
-                        <span>Time Limit</span>
-    
-                        <input type="number" name="limit" min="30" value="180">
-                        <span>seconds</span>
-                    </label>
-                    
-                </form>
-    
-                <button id="play" data-id="game">Play</button>
-            </section>
-            </div>
-            
+        <div class="number-systems-block">
+          <div class="system-block">
+            <label>
+              <input type="radio" name="system" value="2">
+              <span>Binary</span>
+            </label>
+            <label>
+              <input type="radio" name="system" value="8">
+              <span>Octal</span>
+            </label>
+            <label>
+              <input type="radio" name="system" value="16" checked>
+              <span>Hexadecimal</span>
+            </label>
+            <label>
+              <input type="radio" name="system" value="mix">
+              <span>Mix</span>
+            </label>
+          </div>
+          
+          <div class="direction-block">
+            <label>
+              <input type="radio" name="direction" value="to">
+              <span>To decimal</span>
+            </label>
+            <label>
+              <input type="radio" name="direction" value="from" checked>
+              <span>From decimal</span>
+            </label>
+            <label>
+              <input type="radio" name="direction" value="both">
+              <span>Any direction</span>
+            </label>
+          </div>
+        </div>
 
-        <section id="game" hidden> 
-            <p>Случайное число будет:<span class="outNumber"></span></p>
-            <h2>Guess a Number</h2>
+        <div class="digits">
+          <label>
+            <span class="choice-point">Maximum digits</span>
+            <input type="number" name="digits" min="1" max="8" value="2">
+          </label>
+          <label>
+            <span class="choice-point">Question count</span>
+            <select name="count">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="100">100</option>
+            </select>
+          </label>
+        </div>
 
-            <button id="check" data-id="results">Check answer</button>
-        </section>
+        <label class="timed-flex">
+          <input type="checkbox" name="timed">
+          <span>Time Limit</span>
 
-        <section id="results" hidden>
-            <h2>Results</h2>
+          <input type="number" name="limit" min="30" value="180">
+          <span>seconds</span>
+        </label>
+      </form>
 
-            <button id="new" data-id="menu">New Quiz</button>
-        </section>
-    </main>
-    
-    <footer>
-        <a href="https://github.com/kerich2004/number-systems-quiz">Github Repo</a>
-    </footer>
+      <button id="play" data-id="game">Play</button>
+    </section>
+
+    <section id="game" hidden>
+      <h2>Guess a Number</h2>
+
+      <p>convert <span class="from">Decimal</span> <span class="guess-number">10</span></p>
+      <p>to <span class="to">Octal</span></p>
+      <form action="">
+        <input type="text" id="guess">
+      </form>
+      <p>Question <span class="question-number">1</span> of <span class="question-total">10</span></p>
+      <button id="check" data-id="results">Check answer</button>
+    </section>
+
+    <section id="results" hidden>
+      <h2>Results</h2>
+      <table>
+        
+      </table>
+      <button id="new" data-id="menu">New Quiz</button>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/kerich2004/number-systems-quiz">Github Repo</a>
+  </footer>
 </body>
 
 </html>
