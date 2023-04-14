@@ -8,8 +8,12 @@ function assignListeners() {
             goTo(screen)
         }
     }
+
+    document.getElementById('play').addEventListener('click', startQuiz)
 }
 
 const screenButtons = document.querySelectorAll('#play, #check, #new')
 
 import { goTo } from "./goto.js"
+import { startQuiz } from "./quiz.js"
+// import { generate } from "./guess-number.js"

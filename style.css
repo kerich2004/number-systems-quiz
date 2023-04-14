@@ -1,30 +1,38 @@
-html,input,select,button,h2 {
+html,
+input,
+select,
+button,
+h2 {
     font-family: 'Oswald', sans-serif;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 100vh;
     margin: 0;
     background-image: url(background-first-screen.jpg);
 }
 
-[name=timed]:not(:checked) ~ :is([name=limit], :last-child) {
+[name=timed]:not(:checked)~ :is([name=limit], :last-child) {
     display: none;
 }
 
-input[type="radio"]:checked + span {
+input[type="radio"]:checked+span {
     color: #3A1078;
 }
 
-[name=limit]{
-    width: 40px; 
+[name=limit] {
+    width: 40px;
 }
 
-header > h2 {
+header>h2 {
     font-size: 2em;
     color: #3A1078;
 }
@@ -50,7 +58,7 @@ form {
     margin-bottom: 10px;
 }
 
-.menu {
+#menu {
     display: flex;
     background: #e6cbeb;
     width: 500px;
@@ -66,7 +74,7 @@ button {
     background: #908dba;
     color: white;
     font-size: 1.2em;
-    margin: 10px 0;
+    margin: 20px 0;
     border: 2px solid white;
     border-radius: 10px;
     cursor: pointer;
@@ -94,7 +102,40 @@ a:hover {
     justify-content: space-between;
 }
 
-.system-block, .direction-block {
+.system-block,
+.direction-block {
     display: flex;
     flex-direction: column;
+}
+
+.digits {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.timed-flex {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#game {
+    text-align: center;
+}
+
+.from,
+.to {
+    font-size: x-large;
+}
+
+.guess-number,
+#guess {
+    font-size: xx-large;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+footer {
+    margin-bottom: 15px;
 }
