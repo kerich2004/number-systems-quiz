@@ -139,3 +139,38 @@ a:hover {
 footer {
     margin-bottom: 15px;
 }
+
+#results {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mistakes {
+    width: 500px;
+    border: 2px solid white;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.mistakes td:nth-child(3) {
+    text-shadow:  0 0 2px limegreen, 0 0 2px limegreen, 0 0 2px limegreen, 0 0 2px limegreen;
+    text-transform: uppercase;
+}
+
+.mistakes td:nth-child(4) {
+    text-shadow: 0 0 2px red, 0 0 2px red, 0 0 2px red, 0 0 2px red;
+    text-transform: uppercase;
+}
+
+th {
+    color: white;
+}
+
+th, td {
+    padding: 10px 0;
+    border: 2px solid white;
+}
+

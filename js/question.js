@@ -11,5 +11,4 @@ function Question(num, digits, from, to) {
   this.a = random.toString(to)
 }
 
-
 import { rnd } from "./rnd.js"

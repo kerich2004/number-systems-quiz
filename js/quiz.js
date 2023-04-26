@@ -5,7 +5,6 @@ function startQuiz() {
   const aInput = document.querySelector('#guess')
   const showResults = checkBtn.onclick
   const questions = prepareQuestions()
-  const mistakes = []
 
   let i = 0
 
@@ -20,19 +19,22 @@ function startQuiz() {
     const toSpan = document.querySelector('.to')
     const qSpan = document.querySelector('.guess-number')
     const qNumber = document.querySelector('.question-number')
-    const checkBtn = document.querySelector('#check')
+    const qTotalSpan = document.querySelector('.question-total')
+    const qTotalLength = Object.keys(questions).length;
 
     fromSpan.innerText = dict[question.from]
     toSpan.innerText = dict[question.to]
     qSpan.innerText = question.q
     aInput.value = ''
     qNumber.innerText = question.num
-
-    checkBtn.onclick = () => checkAnswer(question.a)
+    qTotalSpan.innerText = qTotalLength
   }
 
-  function checkAnswer(answer) {
-    if (aInput.value.toLowerCase() != answer) {
+  function checkAnswer() {
+    const userAnswer = aInput.value.trim().toLowerCase()
+
+    if (userAnswer != questions[i].a) {
+      questions[i].userAnswer = userAnswer
       mistakes.push(questions[i])
     }
 
@@ -47,13 +49,6 @@ function startQuiz() {
   }
 }
 
-const dict = {
-  2: 'Binary',
-  8: 'Octal',
-  10: 'Decimal',
-  16: 'Hexadecimal',
-}
-
-
-
 import { prepareQuestions } from "./questions.js"
+import { mistakes } from "./mistakes.js"
+import { dict } from "./dict.js"
