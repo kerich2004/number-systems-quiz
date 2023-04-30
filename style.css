@@ -53,6 +53,8 @@ form {
     width: 300px;
 }
 
+
+
 .choice-point {
     color: #2F58CD;
     margin-bottom: 10px;
@@ -129,12 +131,17 @@ a:hover {
     font-size: x-large;
 }
 
+#answer {
+    align-items: center;
+}
+
 .guess-number,
 #guess {
     font-size: xx-large;
     text-align: center;
     text-transform: uppercase;
 }
+
 
 footer {
     margin-bottom: 15px;
@@ -156,7 +163,7 @@ footer {
 }
 
 .mistakes td:nth-child(3) {
-    text-shadow:  0 0 2px limegreen, 0 0 2px limegreen, 0 0 2px limegreen, 0 0 2px limegreen;
+    text-shadow: 0 0 2px limegreen, 0 0 2px limegreen, 0 0 2px limegreen, 0 0 2px limegreen;
     text-transform: uppercase;
 }
 
@@ -169,8 +176,8 @@ th {
     color: white;
 }
 
-th, td {
+th,
+td {
     padding: 10px 0;
     border: 2px solid white;
 }
-

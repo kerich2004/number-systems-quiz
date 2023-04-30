@@ -5,14 +5,24 @@ function startQuiz() {
   const aInput = document.querySelector('#guess')
   const showResults = checkBtn.onclick
   const questions = prepareQuestions()
-
+  
   let i = 0
+  let stopTimer
+
+  if (options.timed.checked) {
+    stopTimer = runTimer(options.limit.valueAsNumber, () => {
+      checkBtn.onclick = showResults
+      showResults()
+    })
+  }
 
   showQuestion(questions[0])
 
   console.log(questions)
 
   checkBtn.onclick = checkAnswer
+
+  showMistakes.correctAnswerCount = 0
 
   function showQuestion(question) {
     const fromSpan = document.querySelector('.from')
@@ -36,6 +46,8 @@ function startQuiz() {
     if (userAnswer != questions[i].a) {
       questions[i].userAnswer = userAnswer
       mistakes.push(questions[i])
+    } else {
+      showMistakes.correctAnswerCount++
     }
 
     i++
@@ -45,10 +57,12 @@ function startQuiz() {
     else {
       showResults()
       checkBtn.onclick = showResults
+      stopTimer?.()
     }
   }
 }
 
 import { prepareQuestions } from "./questions.js"
-import { mistakes } from "./mistakes.js"
+import { mistakes, showMistakes } from "./mistakes.js"
 import { dict } from "./dict.js"
+import { runTimer } from "./timer.js"

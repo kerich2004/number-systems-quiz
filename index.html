@@ -95,15 +95,16 @@
     </section>
 
     <section id="game" hidden>
+      <div class="timer"></div>
       <h2>Guess a Number</h2>
 
       <p>convert <span class="from">Decimal</span> <span class="guess-number">10</span></p>
       <p>to <span class="to">Octal</span></p>
-      <form action="">
-        <input type="text" id="guess">
+      <form action="javascript:" id="answer">
+        <input type="text" id="guess" autocomplete="off">
+        <p>Question <span class="question-number">1</span> of <span class="question-total">10</span></p>
+        <button id="check" data-id="results">Check answer</button>
       </form>
-      <p>Question <span class="question-number">1</span> of <span class="question-total">10</span></p>
-      <button id="check" data-id="results">Check answer</button>
     </section>
 
     <section id="results" hidden>

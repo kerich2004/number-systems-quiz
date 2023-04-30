@@ -3,12 +3,13 @@ export { mistakes, showMistakes }
 const mistakes = []
 
 function showMistakes() {
+  const { correctAnswerCount } = showMistakes
   const resultHeader = document.querySelector('.result')
   const tableBody = document.querySelector('.mistakes > tbody')
   const count = options.count.value
-  const percentage = Math.round((count - mistakes.length) / count * 100)
+  const percentage = Math.round((correctAnswerCount) / count * 100)
 
-  resultHeader.innerText = `Correct: ${count - mistakes.length} out of ${count} (${percentage}%)`
+  resultHeader.innerText = `Correct: ${correctAnswerCount} out of ${count} (${percentage}%)`
   tableBody.innerHTML = ''
 
   for (const mistake of mistakes.splice(0)) {
